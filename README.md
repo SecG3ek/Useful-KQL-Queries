@@ -3,6 +3,7 @@ A collection of useful KQL queries for Microsoft Sentinel and Defender. Includes
 
 
 🔍 Sentinel KQL & Advanced Threat Hunting Queries
+
 Microsoft KQL  — your go-to arsenal of 🔥 powerful, practical, and production-ready KQL queries for:
 
 🛡️ Microsoft Sentinel
@@ -14,20 +15,3 @@ Microsoft KQL  — your go-to arsenal of 🔥 powerful, practical, and productio
 ⚔️ Detection Engineering
 
 🚨 Incident Investigation
-
-⚡ What’s Inside?
-This repo is packed with queries designed to detect and investigate:
-
-🎯 MITRE ATT&CK TTPs
-
-🧬 Lateral Movement
-
-💾 Data Exfiltration
-
-🔓 Privilege Escalation
-
-📥 Suspicious Downloads
-
-🖥️ Unusual Remote Access
-
-🔐 Malicious Logins & Token Abuse
