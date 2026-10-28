@@ -1,0 +1,12 @@
+DeviceProcessEvents
+| where Timestamp > ago(30d)
+| join kind=inner (DeviceInfo | where OSPlatform =~ "macOS" | distinct DeviceId) on DeviceId
+| where InitiatingProcessFileName in~ ("Terminal","bash","zsh","sh","login","iTerm2")
+| where (FileName in~ ("curl","wget") and ProcessCommandLine has_any ("http"))
+     or (FileName in~ ("bash","zsh","sh") and ProcessCommandLine has_any ("curl","base64","| bash","|bash","| sh","|sh","eval"))
+     or (FileName =~ "base64" and ProcessCommandLine has_any ("-d","--decode","-D"))
+     or (FileName =~ "osascript")
+| where ProcessCommandLine has_any ("http","base64","ray-id","/tmp/","osascript","nohup","xattr -c","chmod +x")
+| project Timestamp, DeviceId, DeviceName, ReportId, AccountName, InitiatingProcessFileName,
+          InitiatingProcessCommandLine, FileName, ProcessCommandLine
+| order by Timestamp desc
