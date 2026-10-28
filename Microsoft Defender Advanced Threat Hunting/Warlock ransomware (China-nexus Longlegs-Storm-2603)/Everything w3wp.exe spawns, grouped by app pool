@@ -1,0 +1,11 @@
+DeviceProcessEvents
+| where Timestamp > ago(30d)
+| where InitiatingProcessFileName =~ "w3wp.exe"
+| where FileName in~ ("cmd.exe", "powershell.exe", "pwsh.exe", "whoami.exe", "net.exe", "net1.exe", "nltest.exe",
+                      "msiexec.exe", "certutil.exe", "bitsadmin.exe", "curl.exe", "wmic.exe", "rundll32.exe",
+                      "csc.exe", "tasklist.exe", "systeminfo.exe", "ipconfig.exe", "quser.exe", "schtasks.exe",
+                      "reg.exe", "sc.exe")
+| extend AppPool = extract(@"-ap\s+""([^""]+)""", 1, InitiatingProcessCommandLine)
+| summarize Executions = count(), Devices = dcount(DeviceId), FirstSeen = min(Timestamp), LastSeen = max(Timestamp),
+            SampleCommand = any(ProcessCommandLine) by AppPool, FileName
+| order by Executions desc
