@@ -1,0 +1,9 @@
+let LureDomains   = dynamic(["js-static.cfd"]);
+let PayloadDomains = dynamic(["api-com.cfd","cf-id.com"]);
+DeviceNetworkEvents
+| where Timestamp > ago(30d)
+| where RemoteUrl has_any (LureDomains) or RemoteUrl has_any (PayloadDomains)
+| extend Stage = iff(RemoteUrl has_any (PayloadDomains), "PAYLOAD - command likely executed", "LURE - visited infected site")
+| project Timestamp, DeviceId, DeviceName, ReportId, Stage, RemoteUrl, RemoteIP, RemotePort,
+          ActionType, InitiatingProcessFileName, InitiatingProcessCommandLine, InitiatingProcessAccountName
+| order by Timestamp desc
