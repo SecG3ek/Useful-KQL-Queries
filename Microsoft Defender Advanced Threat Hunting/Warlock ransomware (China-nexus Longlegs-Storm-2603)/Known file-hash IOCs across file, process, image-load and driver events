@@ -1,0 +1,71 @@
+let ioc_sha256 = dynamic([
+    "116ca4e88a1bcebb6c0da7fb431c8eca7b8ef3f9767194820c56091972ccac2c",
+    "155fb1cbdaea12c83ba92d18c88cf38bbc42bb684f913ca0bc26fcf115426a55",
+    "6d07f1232dc59b84038fd0b2e75fdd3d5b825882bb0dba9e6724b7b0823fa3ad",
+    "8b58f7811a2a2f2a5024220490473774f02759dd2dd904b5b9fabfbaae37125f",
+    "8ce8d8270ee9de02644530b8dd7fa78973b4a3b80f121e2c5f45ae68cce196f9",
+    "1edb2c0b537cd95bbd5fc16321b4c38a6adf325ccc7b588ad6acc980b0463b60",
+    "206f27ae820783b7755bca89f83a0fe096dbb510018dd65b63fc80bd20c03261",
+    "27b7591cf9e1283010ca98fa5dbe970a73fee0d8cde277639924c144718db7c0",
+    "c46825fcc0d1bf7a8b192facb176d6bf916c9dccfd6fa994be691e3b0e585f4e",
+    "e14240bac8277b0f6dd4d29ab5da20d246bcccae647e5fe8d19cdae7fe471b20",
+    "fb3846c9ac53d1b841ada3a6b1091153fea41a169cb44fe0084097d1f4d45984",
+    "37f94fe1b4a106f02b6f74a69cbc05e69c17406f688beef4c9a045ffcbd2e65e",
+    "9ceb01f8bf7d6dba2ae07f5bd6070de3ec67b5eb01f969b0ba85e74564fb83a7",
+    "aaff04d84ef85353966aa4af186ff1254b72c068f33f802417b29dc23fb9f192",
+    "e3204b05e2f3a29bb6e6fcc21dda77d7cd31dfa755c21da0aa8661b5619ee0a1",
+    "eea631b5f7125239db0811e4682c2316ead69f9822e02d94fb5d8bf0d2faebed",
+    "f7269f80f81e99d06a590d7ab374e12fdf7e5f55a02c2a46c342d670f8519fdf",
+    "73c5268256c9da5488cd9e2b79013060ac321c7e54129344dc7b51e268af36ea",
+    "ae9f7fce57c7b928e659dccf0e00fa79cd9cd61a106f18d4e03f92dc3a03c295",
+    "da8de7257c6897d2220cdf9d4755b15aeb38715807e3665716d2ee761c266fdb",
+    "92bb4ddb98eeaf11fc15bb32e71d0a63256a0ed826a03ba293ce3a8bf057a514",
+    "24480dbe306597da1ba393b6e30d542673066f98826cc07ac4b9033137f37dbf",
+    "b5a78616f709859a0d9f830d28ff2f9dbbb2387df1753739407917e96dadf6b0",
+    "c27b725ff66fdfb11dd6487a3815d1d1eba89d61b0e919e4d06ed3ac6a74fe94",
+    "1eb914c09c873f0a7bcf81475ab0f6bdfaccc6b63bf7e5f2dbf19295106af192",
+    "4c1750a14915bf2c0b093c2cb59063912dfa039a2adfe6d26d6914804e2ae928",
+    "83705c75731e1d590b08f9357bc3b0f04741e92a033618736387512b40dab060",
+    "f54ae00a9bae73da001c4d3d690d26ddf5e8e006b5562f936df472ec5e299441",
+    "b180ab0a5845ed619939154f67526d2b04d28713fcc1904fbd666275538f431d",
+    "6753b840cec65dfba0d7d326ec768bff2495784c60db6a139f51c5e83349ac4d",
+    "7ae971e40528d364fa52f3bb5e0660ac25ef63e082e3bbd54f153e27b31eae68",
+    "567cb8e8c8bd0d909870c656b292b57bcb24eb55a8582b884e0a228e298e7443",
+    "445a37279d3a229ed18513e85f0c8d861c6f560e0f914a5869df14a74b679b86",
+    "ffbc9dfc284b147e07a430fe9471e66c716a84a1f18976474a54bee82605fa9a",
+    "6b273c2179518dacb1218201fd37ee2492a5e1713be907e69bf7ea56ceca53a5",
+    "c2c1fec7856e8d49f5d49267e69993837575dbbec99cd702c5be134a85b2c139",
+    "6f6db63ece791c6dc1054f1e1231b5bbcf6c051a49bad0784569271753e24619",
+    "d6da885c90a5d1fb88d0a3f0b5d9817a82d5772d5510a0773c80ca581ce2486d",
+    "62881359e75c9e8899c4bc9f452ef9743e68ce467f8b3e4398bebacde9550dea",
+    "f711b14efb7792033b7ac954ebcfaec8141eb0abafef9c17e769ff96e8fecdf3",
+    "035998b724044d20d583fffa393907c7fef11ad8b93b4d423ad8cb8e53f248b7",
+    "abb0fa128d3a75e69b59fe0391c1158eb84a799ddb0abc55d2d6be3511ef0ea1",
+    "3b013d5aec75bf8aab2423d0f56605c3860a8fbd4f343089a9a8813b15ecc550",
+    "dbf5ee8d232ebce4cd25c0574d3a1ab3aa7c9caf9709047a6790e94d810377de",
+    "0f4b0d65468fe3e5c8fb4bb07ed75d4762e722a60136e377bdad7ef06d9d7c22",
+    "f01675f9ca00da067bdb1812bf829f09ccf5658b87d3326d6fddd773df352574",
+    "8f58da414ec4cdad2f6ac86c19e0a806886c63cfdf1fbbb5a0713dce8a0164c5",
+    "aa25646ea17ae33285203c225386304de1fe4155be44bb86deb154b87b47e3fb",
+    "eaec6b1b23c4450d1d0a7d409d3f21e8a4a171a9e9b82bb8ef2c05a2f7435e9c",
+    "257fed1516ae5fe1b63eae55389e8464f47172154297496e6f4ef13c19a26505",
+    "ceec1a2df81905f68c7ebe986e378fec0805aebdc13de09a4033be48ba66da8b",
+    "55a246576af6f6212c26ef78be5dd8f83e78dd45aea97bb505d8cee1aeef6f17",
+    "aca888bbb300f75d69dd56bc22f87d0ed4e0f6b8ed5421ef26fc3523980b64ad",
+    "f06fe1c3e882092a23002bed3e170da7b64e6b4475acdedea1433a874b10afdf",
+    "7c31d43b30bda3a891f0332ee5b1cf610cdc9ecf772cea9b073ac905d886990d"
+]);
+union
+    (DeviceFileEvents
+        | where SHA256 in~ (ioc_sha256)
+        | project Timestamp, ReportId, DeviceId, DeviceName, SourceTable = "DeviceFileEvents", ActionType, FileName, FolderPath, SHA256, InitiatingProcessFileName, InitiatingProcessCommandLine),
+    (DeviceProcessEvents
+        | where SHA256 in~ (ioc_sha256)
+        | project Timestamp, ReportId, DeviceId, DeviceName, SourceTable = "DeviceProcessEvents", ActionType, FileName, FolderPath, SHA256, InitiatingProcessFileName, InitiatingProcessCommandLine),
+    (DeviceImageLoadEvents
+        | where SHA256 in~ (ioc_sha256)
+        | project Timestamp, ReportId, DeviceId, DeviceName, SourceTable = "DeviceImageLoadEvents", ActionType, FileName, FolderPath, SHA256, InitiatingProcessFileName, InitiatingProcessCommandLine),
+    (DeviceEvents
+        | where SHA256 in~ (ioc_sha256)
+        | project Timestamp, ReportId, DeviceId, DeviceName, SourceTable = "DeviceEvents", ActionType, FileName, FolderPath, SHA256, InitiatingProcessFileName, InitiatingProcessCommandLine)
+| order by Timestamp desc
