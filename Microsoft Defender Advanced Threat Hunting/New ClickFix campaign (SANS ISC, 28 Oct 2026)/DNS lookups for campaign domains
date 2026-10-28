@@ -1,0 +1,11 @@
+let IOCDomains = dynamic(["js-static.cfd","api-com.cfd","cf-id.com"]);
+union
+( DeviceNetworkEvents
+  | where Timestamp > ago(30d) and ActionType == "DnsConnectionInspected"
+  | extend Query = tostring(parse_json(AdditionalFields).query) ),
+( DeviceEvents
+  | where Timestamp > ago(30d) and ActionType == "DnsQueryResponse"
+  | extend Query = tostring(parse_json(AdditionalFields).DnsQueryString) )
+| where Query has_any (IOCDomains)
+| project Timestamp, DeviceName, DeviceId, ActionType, Query, InitiatingProcessFileName, InitiatingProcessCommandLine
+| order by Timestamp desc
