@@ -1,0 +1,12 @@
+//Beware of false-positives. Create security baseline before create a detection rule
+DeviceRegistryEvents
+| where Timestamp > ago(30d)
+| where RegistryKey has @"\Microsoft\Windows\CurrentVersion\Explorer\RunMRU"
+| where ActionType == "RegistryValueSet" and RegistryValueName != "MRUList"
+| where RegistryValueData has_any ("powershell","pwsh","mshta","curl","wget","bitsadmin","certutil",
+                                   "iex","invoke-expression","iwr","invoke-webrequest","irm","invoke-restmethod",
+                                   "downloadstring","frombase64string","-enc","http://","https://",".cfd",
+                                   "msiexec","rundll32","regsvr32","conhost","cmd /c","cmd.exe /c")
+| extend PossibleLure = RegistryValueData has_any ("verif","captcha","cloudflare","ray id","ray-id","human","robot","✓","✅")
+| project Timestamp, DeviceId, DeviceName, ReportId, InitiatingProcessAccountName, RegistryValueData, PossibleLure
+| order by Timestamp desc
