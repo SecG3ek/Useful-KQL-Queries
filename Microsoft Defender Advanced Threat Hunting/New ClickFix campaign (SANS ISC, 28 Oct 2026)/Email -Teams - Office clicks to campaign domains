@@ -1,0 +1,5 @@
+let IOCDomains = dynamic(["js-static.cfd","api-com.cfd","cf-id.com"]);
+union
+( EmailUrlInfo | where Url has_any (IOCDomains) | project Timestamp, Source="EmailUrlInfo", Url, NetworkMessageId ),
+( UrlClickEvents | where Url has_any (IOCDomains) | project Timestamp, Source="UrlClickEvents", Url, AccountUpn, ActionType, IsClickedThrough )
+| where Timestamp > ago(30d)
