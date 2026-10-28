@@ -1,0 +1,9 @@
+DeviceFileEvents
+| where ActionType in ("FileCreated", "FileModified", "FileRenamed")
+| where FolderPath has "web server extensions" and FolderPath has "layouts"
+| where FileName matches regex @"(?i)\.(aspx|ashx|asmx|asax|dll)$" or FileName =~ "debug_dev.js"
+| where FileName matches regex @"(?i)(spinstall|spupdate|splogoutlayout|sp\.ui\.titleview|queryruleaddtool|layout2sp|ghostfile\d*|debug_dev)"
+     or InitiatingProcessFileName in~ ("powershell.exe", "pwsh.exe", "cmd.exe", "w3wp.exe", "cscript.exe", "wscript.exe", "curl.exe", "certutil.exe")
+| project Timestamp, ReportId, DeviceId, DeviceName, ActionType, FileName, FolderPath, SHA256,
+          InitiatingProcessFileName, InitiatingProcessCommandLine, InitiatingProcessParentFileName
+| order by Timestamp desc
